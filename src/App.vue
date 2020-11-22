@@ -1,14 +1,34 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <div id="app" class="app_wrapper">
+    <v-header/>
     <router-view/>
+    <v-bottom-nav/>
   </div>
 </template>
 
+<script>
+import VHeader from "./components/layouts/v_header"
+import VBottomNav from "./components/layouts/v_bottom_nav"
+
+
+export default {
+  components:{
+    VHeader,
+    VBottomNav
+  },
+
+  
+}
+</script>
+
 <style lang="scss">
+body{
+  background-color: #000;
+}
+*{
+  padding: 0;
+  margin: 0;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -17,16 +37,9 @@
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.app_wrapper{
+  background-color: #fff;
+  max-width: 500px;
+  margin: 2rem auto;
 }
 </style>
