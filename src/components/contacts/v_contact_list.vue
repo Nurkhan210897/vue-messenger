@@ -1,6 +1,11 @@
 <template>
-  <div>
-   <VContactUser v-for="(item, index) in contacts" :key="index" :contactData="item"/>
+  <div class="contact_list_wrapper">  
+   <VContactUser 
+   v-for="(item, index) in contacts" 
+   :key="index" 
+   :contactsData="item"
+   @toContactInfo="toContactInfo(item)"
+   />
   </div>
 </template>
 
@@ -19,5 +24,19 @@ export default {
     this.FETCH_API_CONTACTS;
     console.log(this.contacts)
   },
+  methods:{
+   toContactInfo(contact){
+    this.$router.push({
+     name: 'contact',
+     query: {'id': contact.id}
+    })
+   }
+  }
 };
 </script>
+
+<style lang="scss">
+.contact_list_wrapper{
+ padding: 20px 0;
+}
+</style>

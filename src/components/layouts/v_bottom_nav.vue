@@ -16,7 +16,6 @@
   display: flex;
   justify-content: space-between;
   border-top: 1px solid #ccc;
-  margin-top: 20px;
   a{
    color:#0099bc ;
    font-size: 32px;

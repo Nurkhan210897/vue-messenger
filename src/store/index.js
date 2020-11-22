@@ -20,6 +20,9 @@ export default new Vuex.Store({
                 .then(function(response) {
                     commit('SET_API_CONTACTS', response.data)
                 })
+        },
+        SET_USER_TO_HEADER({ commit }, user) {
+
         }
     },
     modules: {}
